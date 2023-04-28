@@ -1,4 +1,12 @@
 class ContentType(object):
+    """
+    Abstract class providing method for content types handling actual get
+    request.
+
+    Attributes
+    ----------
+    lotr_sdk : function
+    """
 
     def __init__(self, lotr_sdk):
         self.lotr_sdk = lotr_sdk

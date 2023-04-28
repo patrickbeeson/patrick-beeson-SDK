@@ -1,11 +1,26 @@
 from dotenv import dotenv_values
 
-from api_utils.api_requester import APIRequester
-from api_utils.mixins import PathBuilder
+from lord_of_the_rings_sdk.api_utils.api_requester import APIRequester
+from lord_of_the_rings_sdk.api_utils.mixins import PathBuilder
+from lord_of_the_rings_sdk.exceptions.api_exception import ApiException
 
 config = dotenv_values(".env")
-    
+
+
 class Client(object):
+    """
+    Class representing the API client to handle the complete request. Provides
+    access to the response as JSON as well as the status code.
+
+    Attributes
+    ----------
+    base_url : string
+    version : string
+    _movie : property
+        Method to instantiate the Movie object
+    _quote : property
+        Method to instantiate the Quote object
+    """
 
     def __init__(self):
         self.base_url = config['LOTR_API_BASE_URL']
@@ -40,8 +55,10 @@ class Client(object):
         ).build()
 
         api = APIRequester(url=url, headers=headers)
-
-        response = api.get()
+        try:
+            response = api.get()
+        except:
+            raise ApiException("There was a problem requesting the LOTR API.")
         json_response = response.json()
 
         return {

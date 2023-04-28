@@ -1,7 +1,7 @@
 import unittest
 import json
 
-from api_utils.mixins import *
+from lord_of_the_rings_sdk.api_utils.mixins import *
 
 
 class TextMixins(unittest.TestCase):
@@ -17,7 +17,7 @@ class TextMixins(unittest.TestCase):
         }
         self.path_builder = PathBuilder(**self.kwargs)
         self.params = {"limit": "1", "page": "2", "offset": "3"}
-        self.url = 'movie'
+        self.url = 'https://lordoftherings.dev/v1/movie'
 
     def test_path_builder_builds_url_and_path(self):
         self.assertEqual(
@@ -28,7 +28,7 @@ class TextMixins(unittest.TestCase):
     def test_create_params(self):
         self.assertEqual(
             create_params(url=self.url, params=json.dumps(self.params)),
-            "movie?limit=1&page=2&offset=3"
+            "https://lordoftherings.dev/v1/movie?limit=1&page=2&offset=3"
         )
 
 if __name__ == '__main__':
