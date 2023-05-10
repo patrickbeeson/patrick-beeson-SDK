@@ -44,5 +44,5 @@ method or individually.
 
 ## Additional document and resources
 
-Please see the [https://the-one-api.dev/documentation](LOTR API documentation) for
+Please see the [LOTR API documentation](https://the-one-api.dev/documentation) for
 more information and use restrictions.
