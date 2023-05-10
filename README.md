@@ -1,6 +1,6 @@
 # Lord of the Rings SDK
 
-This SDK is a partial implementation of the Lord of the Rings API (https://the-one-api.dev/).
+This SDK is a partial implementation of the [Lord of the Rings API](https://the-one-api.dev/).
 
 ## Installing the SDK
 
@@ -44,5 +44,5 @@ method or individually.
 
 ## Additional document and resources
 
-Please see the (https://the-one-api.dev/documentation)[LOTR API documentation] for
+Please see the [https://the-one-api.dev/documentation](LOTR API documentation) for
 more information and use restrictions.
